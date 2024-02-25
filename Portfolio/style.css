@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rajdhani", sans-serif;
+    font-style: normal;
+}
+body, html{
+    height: 100%;
+    width: 100%;
+}
+#main{
+    height: 100%;
+    width: 100%;
+}
+
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 30px 40px;
+    position: fixed;
+    width: 100%;
+}
+#nav h3{
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+#intro{
+    height: 40%;
+    width: 100%;
+    padding: 50px;
+    width: 100%;
+
+    /* background-color: red; */
+}
+#intro h1{
+    font-size: 80px;
+    line-height: 70px;
+}
+#location{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#location h3{
+    font-size: 25px;
+}
+#location h4{
+    font-size: 20px;
+}
+
+#hero-img{
+    height: 87%;
+    width: 100%;
+    object-fit: cover;
+}
+#about{
+    height: 45%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 60px;
+}
+#about h2{
+    width: 70%;
+    font-size: 70px;
+    line-height: 70px;
+    border-right: 1px solid black;
+    padding-right: 50px;
+}
+#about2{
+    width: 30%;
+    height: 100%;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#socials i{
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 50px;
+}
+#socials a{
+    text-decoration: none;
+}
+
+#about2 h3{
+    font-size: 40px;
+}
+
+#about3{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 400px;
+    margin: 0% 3%;
+    display: flex;
+}
+#div1{
+    width:30%;
+    border-right: 1px solid black;
+    margin: 30px;
+    display: flex;
+    align-items: top;
+    padding-right: 40px;
+    padding-top: 10px;
+    justify-content: space-between;
+}
+#div1 i{
+    font-size: 25px;
+}
+
+#subdiv1{
+    height: 50%;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+#subsubdiv1, #subsubdiv2{
+    /* margin: 25px; */
+    padding: 0 50px;
+    width: 100%;
+}
+#subsubdiv1{
+    border-right: 1px solid black;
+}
+
+#subdiv2{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+#div2{
+    width: 70%;
+}
