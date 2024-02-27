@@ -46,12 +46,21 @@ body, html{
     position: fixed;
     width: 100%;
 }
+#nav button{
+    background-color: var(--accent);
+    color: var(--background);
+    border-radius: 50px;
+    padding: 10px 15px;
+    margin-left: 5px;
+    border: none;
+    font-size: 15px;
+}
 #nav h3{
-    background-color: var(--primary);
     color: var(--background);
     border-radius: 50px;
     padding: 5px 10px;
     margin-left: 5px;
+    background-color: var(--accent);
 }
 #intro{
     height: 40%;
@@ -107,7 +116,7 @@ body, html{
 #socials i{
     text-decoration: none;
     background-color: var(--primary);
-    color: var(    --background);
+    color: var(--background);
     padding: 10px;
     font-size: 25px;
     border-radius: 50px;
@@ -115,6 +124,13 @@ body, html{
 #socials a{
     text-decoration: none;
 }
+#socials i:hover{
+    background-color: var(--accent);
+    color: var(--background);
+    
+}
+
+
 
 #about2 h3{
     font-size: 40px;
@@ -191,3 +207,4 @@ body, html{
     padding: 10px 100px;
     background-color: var(--muted);
 }
+
