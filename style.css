@@ -34,10 +34,6 @@ body, html{
     --accent: var(--accent-l);
     --font: var(--font-l);
 }
-/* #main{
-    height: 100%;
-    width: 100%;
-} */
 
 #nav{
     display: flex;
@@ -50,13 +46,14 @@ body, html{
 #nav button{
     background-color: var(--accent);
     color: var(--background);
-    border-radius: 50px;
+    border-radius: 5px;
     padding: 5px 15px;
     margin-left: 5px;
     border: none;
-    font-size: 20px;
+    font-size: 21px;
 }
 #nav h3{
+    font-size: 20px;
     color: var(--background);
     background-color: var(--accent);
 }
@@ -121,9 +118,15 @@ body, html{
     font-size: 25px;
     border-radius: 5px;
     transition: 0.5s ease;
+    border: 2px solid var(--background);
 }
 #socials a{
     text-decoration: none;
+}
+#about2 #socials a i:hover{
+    color: var(--background);
+    border: 2px solid var(--accent);
+    background-color: var(--accent);
 }
 
 
@@ -335,7 +338,7 @@ form{
 input[type="submit"]{
     background-color: var(--accent);
     padding: 15px 50px;
-    border-radius: 50px;
+    border-radius: 5px;
     border: none;
     font-size: 25px;
 }
