@@ -244,7 +244,34 @@ body, html{
     overflow: hidden;
     padding: 10px 100px;
 }
-#proj #img{
+#proj #img #overlay{
+    height: 81.9%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: opacity ease 1s;
+    opacity: 0;
+    background-color: #181a1a;
+}
+#proj #img:hover #overlay{
+    opacity: 0.5;
+}
+#proj #img i{
+    position: absolute;
+    opacity: 1;
+    color: white;
+    font-size: 50px;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 100;
+    padding: 18% 0 0 48%;
+}
+#proj #img:hover i{
+    opacity: 1;
+}
+#proj {
     position: relative;
 }
 #proj h3{
@@ -264,10 +291,6 @@ body, html{
 #proj h3 {
     color: var(--accent);
     /* transition: 0.5s ease; */
-}
-#proj a:hover{
-    cursor: crosshair;
-    text-shadow: 0px 0px 50px var(--primary);
 }
 #proj h4{
     width: 100%;
