@@ -155,7 +155,7 @@
                         <h2>Or drop a message </h2>
                     </div>
                     <form action="https://api.web3forms.com/submit" method="POST">
-
+                        <input type="hidden" name="from_name" value="Personal Portfolio">
                         <div id="box2">
                             <input type="hidden" name="access_key" value="5aa665b2-8ccb-4344-a088-a8e1ecc290a1">
                             <h5 id="name" >Name</h5>
@@ -168,7 +168,12 @@
                             <textarea id="message" name="message" cols="30" rows="10" required></textarea>
                             <br>
                             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                            <input type="hidden" name="subject" value="New Submission from your portfolio">
                             <input type="submit">
+                            <input type="hidden" name="replyto" value="custom@gmail.com" />
+                        <!--redirect to custom page -->
+                       <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thanks.html"> -->
+                            <div id="result"></div>
                         </div> 
                     </form>                     
                 </div>
@@ -177,5 +182,49 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="script.js"></script>
+<!--      // Reset the form fields when the page loads -->
+    <script>
+    window.onload = function() {
+        document.getElementById("form").reset();
+    };
+    const form = document.getElementById('form');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+      result.innerHTML = "Please wait..."
+    
+        fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    result.innerHTML = json.message;
+                } else {
+                    console.log(response);
+                    result.innerHTML = json.message;
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                result.innerHTML = "Something went wrong!";
+            })
+            .then(function() {
+                form.reset();
+                setTimeout(() => {
+                    result.style.display = "none";
+                }, 3000);
+    });
+});
+</script>
 </body>
 </html>
