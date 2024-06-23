@@ -95,3 +95,7 @@ button.addEventListener('click', function() {
     });
 });
 
+const downloadButton = document.querySelector('.resume-btn');
+downloadButton.addEventListener('click', () => {
+    alert('Resume download initiated!');
+});
