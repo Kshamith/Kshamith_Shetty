@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kshamith Shetty</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="shortcut icon" href="/Images/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +26,10 @@
                 <a href="#page3">
                     
                     <button>
-                        <a class="resume-btn" href="Resume/Kshamithraj_R_Shetty.pdf" download>Download Resume</a>
+                        <a class="resume-btn" href="Resume/Kshamithraj_R_Shetty.pdf" download>
+                            Resume
+                            <i class="ri-file-download-line"></i>
+                        </a>
                     </button>
                 </a>
             </div>
@@ -170,17 +172,18 @@
                             <br>
                             <input type="hidden" name="subject" value="New Submission from your portfolio">
                             <input type="hidden" name="replyto" value="kshamithrajshetty@gmail.com" />
-                            <input type="submit">
+                            <input id="submit-btn" type="submit">
                         <!--redirect to custom page -->
                        <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thanks.html"> -->
-                            <div id="result"></div>
+                            <div id="result">
+
+                            </div>
                         </div> 
                     </form>                     
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

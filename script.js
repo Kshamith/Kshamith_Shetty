@@ -33,12 +33,6 @@ toggleButton.addEventListener('click', function() {
     isLightMode = !isLightMode;
 });
 
-const scroll = new LocomotiveScroll({
-    el: document.querySelector('#main'),
-    smooth: true
-});
-
-
 var button = document.getElementById('color-toggle');
 var icon = document.getElementById('myIcon');
 
