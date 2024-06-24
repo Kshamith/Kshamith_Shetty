@@ -4,7 +4,7 @@ var rootElement = document.documentElement;
 // Get the toggle button element
 var toggleButton = document.getElementById('color-toggle');
 
-// Define your color schemes
+// Defining the color schemes
 var lightColors = {
     '--background': '#f5f5f5',
     '--primary': '#181a1a',
@@ -21,7 +21,7 @@ var darkColors = {
     '--font': '#f5f5f5f5'
 };
 
-// Assume light mode is the default
+// Setting light mode as the default
 var isLightMode = true;
 
 // Add event listener for the toggle button

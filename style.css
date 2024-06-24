@@ -8,7 +8,7 @@
 body, html{
     transition: 1s ease;
     height: 100%;
-    width: 100%;
+    max-width: 100vw;
     background-color: var(--background);
     color: var(--font);
 }
@@ -25,7 +25,9 @@ body, html{
     --accent: var(--accent-l);
     --font: var(--font-l);
 }
-
+#page1,#main{
+    max-width: 100vw;
+}
 #nav{
     display: flex;
     align-items: center;
@@ -33,7 +35,7 @@ body, html{
     padding: 30px 40px;
     position: fixed;
     z-index: 100;
-    width: 100%;
+    width: 100vw;
 }
 #nav button{
     background-color: var(--accent);
@@ -59,9 +61,9 @@ body, html{
 
 #intro{
     height: 40%;
-    width: 100%;
+    max-width: 100vw;
     padding: 50px;
-    width: 100%;
+    width: 100vw;
 }
 #intro h1{
     font-size: 80px;
@@ -80,21 +82,25 @@ body, html{
 }
 
 #hero-img{
-    height: 100vh;
-    width: 100%;
-    object-fit:cover;
-    object-position: center 40%;
+    display: block;
+    max-width: 100vw;
+    object-fit:contain;
+    object-position: center -40em;
+}
+#img-container{
+    height: 75vh;
+    overflow: hidden;
 }
 #about{
-    height: 45%;
-    width: 100%;
+    max-height: 45%;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 50px 60px;
 }
 #about h2{
-    width: 70%;
+    max-width: 70%;
     font-size: 70px;
     line-height: 70px;
     border-right: 1px solid var(--primary);
@@ -163,7 +169,7 @@ body, html{
 }
 #subsubdiv1, #subsubdiv2{
     padding: 0 50px;
-    width: 100%;
+    width: 100vw;
 }
 #subsubdiv1{
     border-right: 1px solid var(--primary);
@@ -181,19 +187,19 @@ body, html{
 }
 #page2{
     height: 100%;
-    width: 100%;
+    width: 100vw;
     transition: 1s ease;
 }
 
 #wrapper{
     background-color: var(--primary);
     color: var(--background);
-    width: 100%;
+    width: 100vw;
     height: 25vh;
 }
 
 #moving-txt{
-    width: 100%;
+    width: 100vw;
     height: 25vh;
     font-size: 100px;
     padding: 0;
@@ -212,6 +218,7 @@ body, html{
     display: inline-block;
     animation: txt-move 170s linear infinite ;
     animation-iteration-count: infinite;
+    width: 100%;
 }
 #moving-txt #circle{
     height: 50px;
@@ -223,7 +230,7 @@ body, html{
 }
 @keyframes txt-move {
     from {
-        transform: translateX(0);
+        transform: translateX(10%);
     }
     to {
         transform: translateX(-100%);
@@ -231,19 +238,21 @@ body, html{
     }
 }
 
-
+#proj {
+    position: relative;
+}
 #proj img{
     transition: 0.5s ease;
     background-color: var(--muted);
-    width: 100%;
+    width: 100vw;
     height: 100%;
     object-fit: contain;
     overflow: hidden;
     padding: 10px 100px;
 }
 #proj #img #overlay{
-    height: 83%;
-    width: 100%;
+    height: 100%;
+    width: 100vw;
     top: 0;
     left: 0;
     position: absolute;
@@ -256,11 +265,10 @@ body, html{
 }
 #proj #img i{
     position: absolute;
-    opacity: 1;
     color: white;
     font-size: 50px;
     height: 100%;
-    width: 100%;
+    width: 100vw;
     top: 0;
     left: 100;
     padding: 18% 0 0 48%;
@@ -268,50 +276,51 @@ body, html{
 #proj #img:hover i{
     opacity: 1;
 }
-#proj {
-    position: relative;
-}
-#proj h3{
-    width: 100%;
+#details h3{
+    width: 100vw;
     height: 100%;
     padding: 10px 0px 0px 100px;
     font-size: 40px;
+    color: var(--accent);
 }
-
-#proj h3 i{
+#details h3 i{
     color: var(--primary);
     font-size: 20px;
     margin-bottom: 10px;
 }
-
-#proj h3 {
-    color: var(--accent);
-}
-#proj h4{
-    width: 100%;
+#details h4{
+    width: 100vw;
     height: 100%;
     padding: 0px 100px;
     font-size: 25px;
     font-weight: 500;
 }
-#proj h5{
-    width: 100%;
+#details h5{
+    width: 100vw;
     height: 100%;
     padding: 0px 100px 20px 100px;
     font-size: 15px;
     font-weight: 100;
 }
+#proj-border{
+    background-color: var(--primary);
+    height: 1px;
+    width: 93.75%;
+    margin: auto;
+    margin-bottom: 25px;
+}
 
 #page3{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    max-height: 100%;
+    margin: 100px 0;
 }
-#page3 h2{
+#page3 h4{
     margin: 25px 0px;
     font-size: 50px;
-    font-weight: 200;
+    font-weight: 400;
 }
-#page3 #socials a i{
+/* #page3 #socials a i{
     font-size: 30px;
     padding: 10px 20px;
     color: var(--accent);
@@ -323,30 +332,19 @@ body, html{
     color: var(--background) ;
     border: 2px solid var(--accent);
     background-color: var(--accent);
-}
-/* #socials h2{
-    font-size: 30px !important;
-    margin-top: 15px !important;
-    color: var(--primary) !important;
-    border: none !important;
-    background-color: var(--background) !important;
 } */
-#page3 #contact{
-    margin: 0 45px;
-    border-top: 1px solid var(--primary);
-}
 
 #maincontainer{
     background-color: var(--muted);
     margin: 25px 0;
-    display: flex;
-    align-items: center;
     padding: 25px;
-    gap: 50px;
+    min-height: 50vh;
     justify-content: space-around;
 }
 form{
     display: flex;
+    max-height: 100%;
+    max-width: 500px;
     align-items: center;
     justify-content: space-around;
     gap: 50px;
@@ -375,13 +373,13 @@ textarea{
 }
 textarea{
     width: 400px;
-    height: 200px;
+    height: 100px;
     margin-top: 2px;
 }
-#box3{
+/* #box3{
     margin-top: 100px;
     
-}
+} */
 input[type="text"]:focus,input[type="email"]:focus,textarea:focus{
     outline: none;
 }
@@ -393,51 +391,447 @@ input[type="text"]:focus,input[type="email"]:focus,textarea:focus{
     border: 1px solid var(--accent);
 }
 
-@media (max-width: 1280px){
-    body, html{
-        width: 1280px;
-    }
-    textarea{
-        width: 300px;
-    }
-}
 @media (max-width: 1024px){
-    body, html{
-        min-width: 1024px;
-    }
     textarea{
-        width: 200px;
+        width: 400px;
+    }
+
+
+    #intro h1{
+        margin-top: -25px;
+        font-size: 50px;
+        line-height: 55px;
+    }
+    #hero-img{
+        object-position: center -20em;
+    }
+    #img-container{
+        height: 65vh;
+    }
+    #about h2{
+        font-size: 30px;
+        line-height: 50px;
+    }
+    #about2{
+        height: 150px;
+        padding: 0 auto;
+        margin: 20px 10px;
+    }
+    #about2 h3{
+        font-size: 20px;
+    }
+    #socials i{
+        padding: 10px;
+        font-size: 15px;
+    }
+    #wrapper{
+        height: 15vh;
+    }
+    #moving-txt{
+        font-size: 60px;
+    }
+    #moving-txt #circle{
+        height: 1em;
+        width: 1em;
+        margin: 15px 25px 5px 25px;
     }
     
 }
 @media (max-width: 768px){
-    body, html{
-        min-width: 768px;
-    }
     textarea{
-        width: 200px;
+        width: 300px;
+    }
+    #about2{
+        padding: 0 20px;
+    }
+    form{
+        font-size: 35px;
     }
 }
 @media (max-width: 648px){
     body, html{
-        min-width: 648px;
+        max-width: 648px;
     }
     textarea,
     input[type="text"],
-    input[type="email"]{    
-        width: 200px;
+    input[type="email"],
+    input[type="submit"]{    
+        max-width: 150px;
+    }
+
+    #nav{
+        justify-content: center;
+    }
+    #intro{
+        padding: 50px 15px;
+    }
+    #intro h1{
+        margin-top:25px;
+        font-size: 45px;
+        line-height: 55px;
+    }
+    #hero-img{
+        object-position: center -10em;
+    }
+    #img-container{
+        height: 50vh;
+    }
+    #about{
+        padding: 30px 15px;
+    }
+    #about h2{
+        font-size: 30px;
+        line-height: 30px;
+        padding-right: 30px;
+        max-width: 200px;
+    }
+    #about2{
+        height: 250px;
+        padding: 0;
+        margin: 20px 0;
+    }
+    #about2 h3{
+        font-size: 20px;
+    }
+    #socials i{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    #about3{
+        max-height: 400px;
+        margin: 0 10px;
+        display: flex;
+    }
+    #about3 #div1{
+        margin: 20px 0;
+        padding: 10px;
+        max-width: 110px;
+    }
+    #about3 #subdiv1 #subsubdiv1{
+        padding: 10px 50px;
+    }
+    #about3 #subdiv1 #subsubdiv2{
+        padding: 10px 40px;
+    }
+    #about3 #subdiv2 #subsubdiv1{
+        padding: 10px 40px;
+    }
+    #about3 #subdiv1 #subsubdiv2{
+        padding: 10px 30px;
+    }
+    #wrapper{
+        height: 10vh;
+    }
+    #moving-txt{
+        font-size: 40px;
+    }
+    #moving-txt #circle{
+        height: 1em;
+        width: 1em;
+        margin: 15px 25px 5px 25px;
+    }
+    #proj img{
+        padding: 10px 20px;
+    }
+    #details h3{
+        font-size: 25px;
+    }
+    #details h4{
+        font-size: 15px;
+    }
+    #details h5{
+        font-size: 10px;
+    }
+    #maincontainer h4{
+        font-size: 30px;
+    }
+    form{
+        font-size: 20px;
+    }
+    #submit-btn{
+        padding: 10px 35px;
     }
     
 }
 
 @media (max-width: 475px){
     body, html{
-        min-width: 475px;
+        max-width: 475px;
     }
     textarea,
     input[type="text"],
-    input[type="email"]{    
-        width: 200px;
+    input[type="email"],
+    input[type="submit"]{    
+        max-width: 150px;
+    }
+
+    #nav{
+        justify-content: center;
+    }
+    #intro{
+        padding: 50px 15px;
+    }
+    #intro h1{
+        margin-top:25px;
+        font-size: 45px;
+        line-height: 55px;
+    }
+    #hero-img{
+        object-position: center -10em;
+    }
+    #img-container{
+        height: 50vh;
+    }
+    #about{
+        padding: 30px 15px;
+    }
+    #about h2{
+        font-size: 20px;
+        line-height: 30px;
+        padding-right: 30px;
+        max-width: 200px;
+    }
+    #about2{
+        height: 170px;
+        padding: 0;
+        margin: 20px 0;
+    }
+    #about2 h3{
+        font-size: 15px;
+    }
+    #socials i{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    #about3{
+        max-height: 250px;
+        margin: 0 10px;
+        display: flex;
+    }
+    #about3 #div1{
+        margin: 20px 0;
+        padding: 10px;
+        max-width: 110px;
+        max-height: 200px;
+        font-size: 15px !important;
+    }
+    #about3 #div2 h2{
+        font-size: 15px !important;
+    }
+
+    #about3 #subdiv1 #subsubdiv1{
+        padding: 10px 50px;
+        font-size: 10px;
+    }
+    #about3 #subdiv1 #subsubdiv2{
+        padding: 10px 40px;
+        font-size: 10px;
+    }
+    #about3 #subdiv2 #subsubdiv1{
+        font-size: 10px;
+        padding: 10px 40px 10px 20px ;
+        max-width: 100px;
+        max-height: 200px;
+        overflow: hidden;
+    }
+    #about3 #subdiv2 #subsubdiv2{
+        font-size: 10px;
+        padding: 10px 40px;
+    }
+    #about3 #subdiv1{
+        max-height: 150px;
+    }
+    #about3 #subdiv2{
+        max-height: 150px;
+    }
+    #wrapper{
+        height: 10vh;
+    }
+    #moving-txt{
+        font-size: 40px;
+    }
+    #moving-txt #circle{
+        height: 1em;
+        width: 1em;
+        margin: 15px 25px 5px 25px;
+    }
+    #proj img{
+        padding: 10px 20px;
+    }
+    #proj #img i{
+        font-size: 25px;
+    }
+    #details h3{
+        font-size: 25px;
+    }
+    #details h4{
+        font-size: 15px;
+    }
+    #details h5{
+        font-size: 10px;
+    }
+    #maincontainer h4{
+        font-size: 30px;
+    }
+    form{
+        font-size: 20px;
+    }
+    #submit-btn{
+        font-size: 15px;
+        padding: 10px 35px;
     }
     
+    /* #page2,#wrapper,#proj,#moving-txt,a,#overlay,img,i{
+        max-width: 50vw;
+    } */
+}
+@media (max-width: 320px){
+    body, html{
+        max-width: 320px;
+    }
+    textarea,
+    input[type="text"],
+    input[type="email"],
+    input[type="submit"]{    
+        max-width: 100px;
+        max-height: 30px;
+    }
+
+    #nav{
+        justify-content: center;
+        margin-top: 30px;
+        padding-top: 0;
+    }
+    #intro{
+        padding: 50px 15px 10px 15px;
+    }
+    #intro h1{
+        margin-top:25px;
+        font-size: 35px;
+        line-height: 55px;
+    }
+    #intro #location h3{
+        font-size: 20px;
+    }
+    #intro #location h4{
+        font-size: 15px;
+    }
+    #hero-img{
+        object-position: center -5em;
+    }
+    #img-container{
+        height: 30vh;
+    }
+    #about{
+        padding: 0px 15px 0px 15px;
+    }
+    #about h2{
+        font-size: 20px;
+        line-height: 30px;
+        padding-right: 30px;
+        max-width: 200px;
+    }
+    #about2{
+        height: 170px;
+        padding: 0;
+        margin: 20px 0;
+    }
+    #about2 h3{
+        font-size: 15px;
+    }
+    #socials i{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    #about3{
+        max-height: 250px;
+        margin: 0 10px;
+        display: flex;
+    }
+    #about3 #div1{
+        margin: 20px 0;
+        padding: 10px;
+        max-width: 110px;
+        max-height: 200px;
+        font-size: 10px !important;
+    }
+    #about3 #div1 i{
+        font-size: 15px !important;
+    }
+    #about3 #div2 h2{
+        font-size: 15px !important;
+    }
+
+    #about3 #subdiv1 #subsubdiv1{
+        padding: 10px auto;
+        font-size: 10px;
+    }
+    #about3 #subdiv1 #subsubdiv2{
+        padding: 10px auto;
+        font-size: 10px;
+    }
+    #about3 #subdiv2 #subsubdiv1{
+        font-size: 10px;
+        padding: 10px 100px 10px 0px ;
+        margin-left: 50px;
+        /* padding: 10px auto ; */
+        max-width: 2000px;
+        max-height: 200px;
+    }
+    #about3 #subdiv2 #subsubdiv2{
+        font-size: 10px;
+        padding: 10px auto;
+        /* padding: 10px 40px 10px 20px; */
+    }
+    #about3 #subdiv1{
+        max-height: 150px;
+    }
+    #about3 #subdiv2{
+        max-height: 150px;
+    }
+    #wrapper{
+        height: 10vh;
+    }
+    #moving-txt{
+        font-size: 40px;
+    }
+    #moving-txt #circle{
+        height: 1em;
+        width: 1em;
+        margin: 15px 25px 5px 25px;
+    }
+    #proj img{
+        padding: 10px 20px;
+    }
+    #proj #img i{
+        font-size: 25px;
+    }
+    #details h3{
+        font-size: 20px;
+    }
+    #details h4{
+        font-size: 10px;
+    }
+    #details h5{
+        font-size: 8px;
+    }
+    #maincontainer h4{
+        font-size: 30px;
+    }
+    form{
+        font-size: 20px;
+    }
+    #submit-btn{
+        font-size: 15px;
+        padding: 10px 35px;
+    }
 }
