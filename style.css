@@ -230,7 +230,7 @@ body, html{
 }
 @keyframes txt-move {
     from {
-        transform: translateX(10%);
+        transform: translateX(0);
     }
     to {
         transform: translateX(-100%);
@@ -320,6 +320,7 @@ body, html{
     font-size: 50px;
     font-weight: 400;
 }
+
 /* #page3 #socials a i{
     font-size: 30px;
     padding: 10px 20px;
@@ -376,10 +377,6 @@ textarea{
     height: 100px;
     margin-top: 2px;
 }
-/* #box3{
-    margin-top: 100px;
-    
-} */
 input[type="text"]:focus,input[type="email"]:focus,textarea:focus{
     outline: none;
 }
@@ -508,7 +505,7 @@ input[type="text"]:focus,input[type="email"]:focus,textarea:focus{
     #about3 #div1{
         margin: 20px 0;
         padding: 10px;
-        max-width: 110px;
+        width: 110px;
     }
     #about3 #subdiv1 #subsubdiv1{
         padding: 10px 50px;
@@ -556,8 +553,7 @@ input[type="text"]:focus,input[type="email"]:focus,textarea:focus{
     }
     
 }
-
-@media (max-width: 475px){
+@media (370px <= width <= 430px){
     body, html{
         max-width: 475px;
     }
@@ -572,7 +568,7 @@ input[type="text"]:focus,input[type="email"]:focus,textarea:focus{
         justify-content: center;
     }
     #intro{
-        padding: 50px 15px;
+        padding: 70px 15px 10px;
     }
     #intro h1{
         margin-top:25px;
@@ -580,13 +576,15 @@ input[type="text"]:focus,input[type="email"]:focus,textarea:focus{
         line-height: 55px;
     }
     #hero-img{
+        width: 10000px;
+        object-fit:fill;
         object-position: center -10em;
     }
     #img-container{
         height: 50vh;
     }
     #about{
-        padding: 30px 15px;
+        padding: 5px 15px 5px;
     }
     #about h2{
         font-size: 20px;
@@ -610,46 +608,60 @@ input[type="text"]:focus,input[type="email"]:focus,textarea:focus{
     }
 
     #about3{
-        max-height: 250px;
+        max-height: 350px;
         margin: 0 10px;
-        display: flex;
+        flex-direction: column;
     }
     #about3 #div1{
+        justify-content: flex-start;
+        gap: 5px;
         margin: 20px 0;
         padding: 10px;
-        max-width: 110px;
+        width: 100%;
         max-height: 200px;
-        font-size: 15px !important;
+        font-size: 15px;
+        border-bottom: 1px solid var(--primary);
+        border-right: none;
+    }
+    #about3 #div2{
+        font-size: 15px;
+        width: 100%;
     }
     #about3 #div2 h2{
-        font-size: 15px !important;
+        font-size: 15px;
     }
 
     #about3 #subdiv1 #subsubdiv1{
-        padding: 10px 50px;
-        font-size: 10px;
+        padding: 20px 50px;
+        margin-bottom: 20px;
+        font-size: 15px;
+        font-weight: 500;
     }
     #about3 #subdiv1 #subsubdiv2{
-        padding: 10px 40px;
-        font-size: 10px;
+        padding: 20px 50px;
+        font-size: 15px;
+        margin-bottom: 20px;
+        font-weight: 500;
     }
     #about3 #subdiv2 #subsubdiv1{
-        font-size: 10px;
-        padding: 10px 40px 10px 20px ;
-        max-width: 100px;
-        max-height: 200px;
-        overflow: hidden;
+        font-size: 15px;
+        padding: 20px 40px ;
+        margin-bottom: 20px;
+        font-weight: 500;
     }
     #about3 #subdiv2 #subsubdiv2{
-        font-size: 10px;
-        padding: 10px 40px;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 0 20px 0 50px;
     }
     #about3 #subdiv1{
         max-height: 150px;
     }
     #about3 #subdiv2{
         max-height: 150px;
+        padding-top: 20px;
     }
+
     #wrapper{
         height: 10vh;
     }
@@ -669,18 +681,173 @@ input[type="text"]:focus,input[type="email"]:focus,textarea:focus{
     }
     #details h3{
         font-size: 25px;
+        padding: 15px 0 0 15px;
     }
     #details h4{
         font-size: 15px;
+        padding: 0 0 0 15px;
     }
     #details h5{
-        font-size: 10px;
+        font-size: 15px;
+        padding: 0 0 15px 15px;
     }
     #maincontainer h4{
         font-size: 30px;
     }
     form{
         font-size: 20px;
+        gap: 10px;
+    }
+    #submit-btn{
+        font-size: 15px;
+        padding: 10px 35px;
+    }
+}
+@media (310px <= width <= 370px){
+    body, html{
+        max-width: 475px;
+    }
+    textarea,
+    input[type="text"],
+    input[type="email"],
+    input[type="submit"]{    
+        max-width: 150px;
+    }
+
+    #nav{
+        justify-content: center;
+    }
+    #intro{
+        padding: 70px 15px 10px;
+    }
+    #intro h1{
+        margin-top:25px;
+        font-size: 45px;
+        line-height: 55px;
+    }
+    #hero-img{
+        width: 10000px;
+        object-fit:fill;
+        object-position: center -10em;
+    }
+    #img-container{
+        height: 50vh;
+    }
+    #about{
+        padding: 5px 15px 5px;
+    }
+    #about h2{
+        font-size: 20px;
+        line-height: 30px;
+        padding-right: 30px;
+        max-width: 200px;
+    }
+    #about2{
+        height: 170px;
+        padding: 0;
+        margin: 20px 0;
+    }
+    #about2 h3{
+        font-size: 15px;
+    }
+    #socials i{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    #about3{
+        max-height: 400px;
+        margin: 0 10px;
+        flex-direction: column;
+    }
+    #about3 #div1{
+        justify-content: flex-start;
+        gap: 5px;
+        margin: 20px 0;
+        padding: 10px;
+        width: 100%;
+        max-height: 200px;
+        font-size: 15px;
+        border-bottom: 1px solid var(--primary);
+        border-right: none;
+    }
+    #about3 #div2{
+        font-size: 15px;
+        width: 100%;
+    }
+    #about3 #div2 h2{
+        font-size: 15px;
+    }
+
+    #about3 #subdiv1 #subsubdiv1{
+        padding: 20px 50px;
+        margin-bottom: 20px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    #about3 #subdiv1 #subsubdiv2{
+        padding: 20px 50px;
+        font-size: 15px;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+    #about3 #subdiv2 #subsubdiv1{
+        font-size: 15px;
+        height: 130px;
+        padding: 40px 40px 20px;
+        font-weight: 500;
+    }
+    #about3 #subdiv2 #subsubdiv2{
+        font-size: 15px;
+        font-weight: 500;
+        padding: 0 20px 0 50px;
+    }
+    #about3 #subdiv1{
+        max-height: 150px;
+    }
+    #about3 #subdiv2{
+        max-height: 150px;
+        padding-top: 20px;
+    }
+
+    #wrapper{
+        height: 10vh;
+    }
+    #moving-txt{
+        font-size: 40px;
+    }
+    #moving-txt #circle{
+        height: 1em;
+        width: 1em;
+        margin: 15px 25px 5px 25px;
+    }
+    #proj img{
+        padding: 10px 20px;
+    }
+    #proj #img i{
+        font-size: 25px;
+    }
+    #details h3{
+        font-size: 25px;
+        padding: 15px 0 0 15px;
+    }
+    #details h4{
+        font-size: 15px;
+        padding: 0 0 0 15px;
+    }
+    #details h5{
+        font-size: 15px;
+        padding: 0 0 15px 15px;
+        font-weight: 400;
+    }
+    #maincontainer h4{
+        font-size: 30px;
+    }
+    form{
+        font-size: 20px;
+        gap: 10px;
     }
     #submit-btn{
         font-size: 15px;
@@ -691,146 +858,42 @@ input[type="text"]:focus,input[type="email"]:focus,textarea:focus{
         max-width: 50vw;
     } */
 }
-@media (max-width: 320px){
+@media (width <= 325px){
     body, html{
-        max-width: 320px;
+        max-width: 475px;
     }
     textarea,
     input[type="text"],
-    input[type="email"],
-    input[type="submit"]{    
-        max-width: 100px;
-        max-height: 30px;
+    input[type="email"]{    
+        max-width: 130px;
+        height: 15px;
     }
-    #nav{
-        justify-content: center;
-        margin-top: 30px;
-        padding-top: 0;
+    textarea{
+        height: 50px;
     }
+    #about2 h3{
+        font-size: 13px;
+    }
+
     #intro{
-        padding: 50px 15px 10px 15px;
+        padding: 70px 15px 0;
     }
     #intro h1{
         margin-top:25px;
         font-size: 35px;
-        line-height: 55px;
-    }
-    #intro #location h3{
-        font-size: 20px;
-    }
-    #intro #location h4{
-        font-size: 15px;
+        line-height: 45px;
     }
     #hero-img{
+        object-fit:fill;
         object-position: center -5em;
     }
     #img-container{
-        height: 30vh;
+        height: 35vh;
     }
-    #about{
-        padding: 0px 15px 0px 15px;
-    }
-    #about h2{
-        font-size: 20px;
-        line-height: 30px;
-        padding-right: 30px;
-        max-width: 200px;
-    }
-    #about2{
-        height: 170px;
-        padding: 0;
-        margin: 20px 0;
-    }
-    #about2 h3{
+    input[type="submit"]{    
         font-size: 15px;
-    }
-    #socials i{
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        font-size: 15px;
-    }
-
-    #about3{
-        max-height: 250px;
-        margin: 0 10px;
-        display: flex;
-    }
-    #about3 #div1{
-        margin: 20px 0;
-        padding: 10px;
-        max-width: 110px;
-        max-height: 200px;
-        font-size: 10px !important;
-    }
-    #about3 #div1 i{
-        font-size: 15px !important;
-    }
-    #about3 #div2 h2{
-        font-size: 15px !important;
-    }
-
-    #about3 #subdiv1 #subsubdiv1{
-        padding: 10px auto;
-        font-size: 10px;
-    }
-    #about3 #subdiv1 #subsubdiv2{
-        padding: 10px auto;
-        font-size: 10px;
-    }
-    #about3 #subdiv2 #subsubdiv1{
-        font-size: 10px;
-        padding: 10px 100px 10px 0px ;
-        margin-left: 50px;
-        /* padding: 10px auto ; */
-        max-width: 2000px;
-        max-height: 200px;
-    }
-    #about3 #subdiv2 #subsubdiv2{
-        font-size: 10px;
-        padding: 10px auto;
-        /* padding: 10px 40px 10px 20px; */
-    }
-    #about3 #subdiv1{
-        max-height: 150px;
-    }
-    #about3 #subdiv2{
-        max-height: 150px;
-    }
-    #wrapper{
-        height: 10vh;
-    }
-    #moving-txt{
-        font-size: 40px;
-    }
-    #moving-txt #circle{
-        height: 1em;
-        width: 1em;
-        margin: 15px 25px 5px 25px;
-    }
-    #proj img{
-        padding: 10px 20px;
-    }
-    #proj #img i{
-        font-size: 25px;
-    }
-    #details h3{
-        font-size: 20px;
-    }
-    #details h4{
-        font-size: 10px;
-    }
-    #details h5{
-        font-size: 8px;
-    }
-    #maincontainer h4{
-        font-size: 30px;
-    }
-    form{
-        font-size: 20px;
-    }
-    #submit-btn{
-        font-size: 15px;
-        padding: 10px 35px;
+        padding: 5px 35px !important;
+        width: 130px !important;
+        max-height: 25px;
     }
 }
