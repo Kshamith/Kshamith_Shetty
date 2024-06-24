@@ -36,6 +36,7 @@ toggleButton.addEventListener('click', function() {
 var button = document.getElementById('color-toggle');
 var icon = document.getElementById('myIcon');
 
+//Button icon change
 button.addEventListener('click', function() {
     if (icon.classList.contains('ri-moon-fill')) {
         icon.classList.remove('ri-moon-fill');
